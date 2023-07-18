@@ -58,9 +58,14 @@ val radius40 = 40.dp
 val radius50 = 50.dp
 //endregion
 
-val buttonHeight = 67.dp
-val buttonSmallHeight = 52.dp
-val cardOfferWidth = 192.dp
-val cardDonutWidth = 138.dp
+// region Pizza Size
+val pizzaLarge = 340.dp
+val pizzaMedium = 300.dp
+val pizzaSmall = 260.dp
+
+//endregion
+
+val normalButtonHeight = 46.dp
+
 
 

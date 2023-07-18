@@ -44,8 +44,6 @@ private val LightColorScheme = lightColorScheme(
 )
 
 private val Inter = FontFamily(
-    Font(R.font.inter_bold, FontWeight.Bold),
-    Font(R.font.inter_medium, FontWeight.Medium),
     Font(R.font.inter_regular, FontWeight.Normal),
     Font(R.font.inter_semi_bold, FontWeight.SemiBold),
 )
@@ -54,7 +52,22 @@ val typography = Typography(
     titleLarge = TextStyle(
         fontFamily = Inter,
         fontWeight = FontWeight.SemiBold,
+        fontSize = textSize24,
+        color = TextPrimary
+    ),
+
+    titleMedium = TextStyle(
+        fontFamily = Inter,
+        fontWeight = FontWeight.Normal,
         fontSize = textSize20,
+        color = TextSecondary
+    ),
+
+    titleSmall = TextStyle(
+        fontFamily = Inter,
+        fontWeight = FontWeight.Normal,
+        fontSize = textSize14,
+        color = TextTertiary
     ),
 
 )
