@@ -1,6 +1,7 @@
 package com.theChance.myapplication.ui.composables
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -22,11 +23,10 @@ fun PizzaOrderSizeButtons(
     onLargeSizeClicked: () -> Unit,
     onMediumSizeClicked: () -> Unit,
     onSmallSizeClicked: () -> Unit,
-
     ) {
 
     Row(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = space16),
         horizontalArrangement = Arrangement.Center,
@@ -36,7 +36,7 @@ fun PizzaOrderSizeButtons(
         AssistChip(
             onClick = { onSmallSizeClicked() },
             shape = CircleShape,
-            label = { Text(text = stringResource(R.string.sizeSmall)) },
+            label = { Text(text = stringResource(R.string.size_small)) },
             modifier = Modifier.height(normalButtonHeight),
 
             )
@@ -56,6 +56,8 @@ fun PizzaOrderSizeButtons(
 
 
     }
+
+
 }
 
 @Preview

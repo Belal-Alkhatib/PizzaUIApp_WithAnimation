@@ -3,7 +3,7 @@
     <string name="pizza">Pizza</string>
     <string name="size_large">L</string>
     <string name="size_medium">M</string>
-    <string name="sizeSmall">S</string>
+    <string name="size_small">S</string>
     <string name="customize">CUSTOMIZE YOUR PIZZA</string>
     <string name="add_to_cart">Add to Cart</string>
 </resources>

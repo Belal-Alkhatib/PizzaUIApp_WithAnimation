@@ -66,6 +66,7 @@ val pizzaSmall = 260.dp
 //endregion
 
 val normalButtonHeight = 46.dp
+val pizzaToppingsHeight = 52.dp
 
 
 
