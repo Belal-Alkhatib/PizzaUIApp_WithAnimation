@@ -17,4 +17,5 @@ data class PizzaToppingsUIState(
     val isOnionSlicesAdded: Boolean = false,
     val isSaysageSlicesAdded: Boolean = false,
     val isBasilSlicesAdded: Boolean = false,
+    val isBroccoliSlicesAdded: Boolean = false,
 )

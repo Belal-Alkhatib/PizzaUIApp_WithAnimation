@@ -2,12 +2,9 @@ package com.theChance.myapplication.ui.composables
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -24,7 +21,6 @@ import com.theChance.myapplication.ui.modifiers.calculateCurrentOffsetForPage
 import com.theChance.myapplication.ui.theme.pizzaLarge
 import com.theChance.myapplication.ui.theme.pizzaMedium
 import com.theChance.myapplication.ui.theme.pizzaSmall
-import com.theChance.myapplication.ui.theme.space40
 import kotlin.math.absoluteValue
 
 @OptIn(ExperimentalPagerApi::class)
@@ -34,7 +30,7 @@ fun PizzaSlider(
     pagerState: PagerState,
     pizzas: List<Painter>,
     pizzaSize: PizzaSize,
-    //content: @Composable () -> Unit
+    content: @Composable (page: Int) -> Unit
 ) {
     val pizzaSizeState: Dp by animateDpAsState(
         targetValue = when (pizzaSize) {
@@ -49,7 +45,8 @@ fun PizzaSlider(
         state = pagerState,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalAlignment = Alignment.CenterVertically,
-        itemSpacing = (-70).dp
+        itemSpacing = (-70).dp,
+
     ) { index ->
         val pageOffset = pagerState.calculateCurrentOffsetForPage(index)
 
@@ -64,15 +61,15 @@ fun PizzaSlider(
                 .fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
-            Image(
-                painter = pizzas[index],
-                contentDescription = null,
-                modifier = Modifier
-                    .size(pizzaSizeState)
-                    .padding(horizontal = space40)
-            )
+//            Image(
+//                painter = pizzas[index],
+//                contentDescription = null,
+//                modifier = Modifier
+//                    .size(pizzaSizeState)
+//                    .padding(horizontal = space40)
+//            )
 
-            //content()
+            content(index)
         }
     }
 }
